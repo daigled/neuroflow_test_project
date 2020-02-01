@@ -1,0 +1,12 @@
+<div class="track-listing" *ngIf="this.track">       
+    <h3 class="track-label">{{ track.label }}</h3>
+    <div class="track-details">
+        <span class="track-speaker">{{ track.speaker }}</span> &bull; <span class="track-category" attr.aria-category={{track.category}}>{{ track.category }}</span>
+    </div>
+    <div class="track-audio-wrap" *ngIf="audioSourceIsValid">
+        <audio class="track-audio" src={{track.url}} attr.aria-label={{track.label}}></audio>
+        <button class="play" (click)="playPauseAudio()"><fa-icon [icon]="icon"></fa-icon></button>
+    </div>
+    <div class="audio-error" *ngIf="!audioSourceIsValid">There was a problem loading the audio for this track</div>
+    <p (click)="showHideDescription()" class="description">{{ this.showFullDescription ? (track.description) : (track.description | slice : 0 : 30) +'...' }}</p>
+</div>

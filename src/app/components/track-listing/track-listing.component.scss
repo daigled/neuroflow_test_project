@@ -1,0 +1,47 @@
+@import '../../../styles.scss';
+
+.track-listing {
+    margin-bottom: 30px;
+    position: relative;
+    margin-left: 60px;
+
+    .track-details {
+        margin: 5px 0;
+    }
+
+    .track-audio-wrap {
+        position: absolute;
+        top: 25px;
+        left: -40px; 
+        
+        button {
+            background: transparent;
+            border: none;
+
+            fa-icon {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .audio-error {
+        padding: 5px;
+        border: solid 1px red;
+        color: red;
+        background: rgba(salmon, 0.2);
+        margin-bottom: 5px;
+    }
+    
+    .track-category {
+        &[aria-category='Relaxation'] { color: $relax; }
+        &[aria-category='Meditation'] { color: $meditate; }
+        &[aria-category='Breathing']  { color: $breathe; }
+    }
+
+    .description {
+        margin: 0;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@import '../styles.scss';
+
+.container {
+    display: block;
+    position: relative;
+    padding: 0 30px;
+    margin: auto;
+    max-width: 1300px;
+}
+
+#main-layout-grid {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 2fr;
+}
+
+#page-title {
+    margin-bottom: 30px;
+}
+
+ul {
+    padding: 0;
+    li {
+        margin-bottom: 10px;
+        &:last-of-type { margin-bottom: 0; }
+    }
+}
+
+.btn {
+    width: 130px;
+    &[aria-label] { color: #fff; }
+    &[aria-label='Relaxation'] { background: $relax; }
+    &[aria-label='Meditation'] { background: $meditate; }
+    &[aria-label='Breathing']  { background: $breathe; }
+}
